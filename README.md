@@ -12,7 +12,10 @@ We know that every project has their own requirements, so this tool can be an ov
 
 ## TODOs
 
-- Make package CLI based
+- ~~Make package CLI based~~
+- Commands:
+    - init
+    - help
 - Routing system
 - Forms management
 - Tests 
