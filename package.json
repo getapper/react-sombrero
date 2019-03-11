@@ -4,11 +4,15 @@
   "description": "A full web frontend framework based on react, redux-immutable, redux-saga and webpack",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": " node index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/getapper/react-sombrero.git"
+  },
+  "bin": {
+    "sombrero": "./index.js"
   },
   "keywords": [
     "react",
@@ -24,5 +28,14 @@
   "bugs": {
     "url": "https://github.com/getapper/react-sombrero/issues"
   },
-  "homepage": "https://github.com/getapper/react-sombrero#readme"
+  "homepage": "https://github.com/getapper/react-sombrero#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "clear": "^0.1.0",
+    "clui": "^0.3.6",
+    "figlet": "^1.2.1",
+    "inquirer": "^6.2.2",
+    "lodash": "^4.17.11",
+    "minimist": "^1.2.0"
+  }
 }
