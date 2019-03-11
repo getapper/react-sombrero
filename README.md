@@ -13,4 +13,6 @@ We know that every project has their own requirements, so this tool can be an ov
 ## TODOs
 
 - Make package CLI based
+- Routing system
+- Forms management
 - Tests 
