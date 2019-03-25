@@ -1,4 +1,4 @@
-<img src="https://github.com/getapper/react-sombrero/blob/master/assets/img/sombrero.png" alt="logo" width="300"/>
+<img src="https://github.com/getapper/react-sombrero/blob/master/assets/img/sombrero.png" alt="logo" width="300" align="center"/>
 
 # react-sombrero
 A full web frontend framework based on react, redux-immutable, redux-saga and webpack
@@ -16,8 +16,9 @@ We know that every project has their own requirements, so this tool can be an ov
 
 - ~~Make package CLI based~~
 - Commands:
-    - init
-    - help
+    - ~~init~~
+    - ~~create~~
+    - ~~help~~
 - Routing system
 - Forms management
 - Tests 
