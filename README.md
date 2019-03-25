@@ -1,4 +1,6 @@
+<p align="center">
 <img src="https://github.com/getapper/react-sombrero/blob/master/assets/img/sombrero.png" alt="logo" width="300" align="center"/>
+</p>
 
 # react-sombrero
 A full web frontend framework based on react, redux-immutable, redux-saga and webpack
