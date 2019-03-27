@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "run": " node index.js",
-    "test": "NODE_ENV=test mocha"
+    "test-all": "NODE_ENV=test mocha --timeout 60000",
+    "test-init": "NODE_ENV=test mocha ./test/init.js --timeout 60000",
+    "test-create": "NODE_ENV=test mocha ./test/create.js --timeout 60000"
   },
   "bin": {
     "sombrero": "./index.js"
@@ -43,6 +45,7 @@
   "devDependencies": {
     "chai": "4.2.0",
     "chai-fs": "^2.0.0",
+    "concat-stream": "^2.0.0",
     "mocha": "6.0.2"
   }
 }
