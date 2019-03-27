@@ -1,10 +1,11 @@
 const chai = require('chai')
 chai.use(require('chai-fs'))
 const expect = chai.expect
-const { execSync } = require('child_process')
+const assert = chai.assert
+const {execSync} = require('child_process')
 const path = require('path')
 
-describe('Init',  () => {
+describe('Init', () => {
   const testDirname = 'test-project'
   const testDirectory = path.join(process.cwd(), 'test')
   const testPath = path.join(testDirectory, testDirname)
@@ -16,8 +17,8 @@ describe('Init',  () => {
     })
   })
 
-  it('should create new project in specified path',  () => {
-     execSync('sombrero init ' + testDirname, {
+  it('should create new project in specified path without installing node_modules', () => {
+    execSync('sombrero init ' + testDirname + ' -n', {
       cwd: testDirectory,
       stdio: 'inherit'
     })
@@ -26,13 +27,22 @@ describe('Init',  () => {
     expect(testPath).to.have.basename(testDirname)
   })
 
-  it('should not create project in specified path because it already exists',  () => {
-    execSync('sombrero init ' + testDirname, {
+  it('should not create project in specified path because it already exists', () => {
+    let result
+
+    execSync('sombrero init ' + testDirname + ' -n', {
       cwd: testDirectory,
       stdio: 'inherit'
     })
 
-    expect(testPath).to.be.a.directory()
-    expect(testPath).to.have.basename(testDirname)
+    try {
+      execSync('sombrero init ' + testDirname + ' -n', {
+        cwd: testDirectory,
+        stdio: 'inherit'
+      })
+    } catch (err) {
+      result = err
+    }
+    assert(result.status === 1)
   })
 })

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "run": " node index.js",
-    "test": "mocha"
+    "test": "NODE_ENV=test mocha"
   },
   "bin": {
     "sombrero": "./index.js"
