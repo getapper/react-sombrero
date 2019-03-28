@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "run": " node index.js",
-    "test": "NODE_ENV=test mocha --timeout 60000",
-    "test-init": "NODE_ENV=test mocha ./test/init.js --timeout 60000",
-    "test-create": "NODE_ENV=test mocha ./test/create.js --timeout 60000"
+    "test": "mocha --timeout 60000",
+    "test-init": "mocha ./test/init.js --timeout 60000",
+    "test-create": "mocha ./test/create.js --timeout 60000"
   },
   "bin": {
     "sombrero": "./index.js"

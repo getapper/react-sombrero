@@ -2,10 +2,11 @@ const chai = require('chai')
 chai.use(require('chai-fs'))
 const expect = chai.expect
 const assert = chai.assert
-const {execSync} = require('child_process')
+const { execSync } = require('child_process')
 const path = require('path')
 const run = require('./helpers/inquirer')
 const { ENTER } = require('./helpers/inquirer')
+const fs = require('fs')
 
 describe('Create', () => {
   const testDirname = 'test-project'
@@ -15,19 +16,18 @@ describe('Create', () => {
 
   // Deletes created test directory after every test case
   afterEach(() => {
-    execSync('rm -r ' + testDirname, {
-      cwd: testDirectory
-    })
+    if (fs.existsSync(testPath)) {
+      execSync('rm -r ' + testDirname, {
+        cwd: testDirectory
+      })
+    }
   })
 
   it('should create a new scene named test-scene', async () => {
     let sceneNumber = '0'
     let newSceneName = 'test-scene'
 
-    execSync('sombrero init ' + testDirname + ' -n', {
-      cwd: testDirectory,
-      stdio: 'inherit'
-    })
+    await run([cliPath, 'init', testDirname, '-n'], [], testDirectory)
 
     await run([cliPath, 'create', 'scene'], [sceneNumber, ENTER, newSceneName, ENTER], testPath)
 
@@ -38,10 +38,7 @@ describe('Create', () => {
     let sceneNumber = '0'
     let newComponentName = 'test-component'
 
-    execSync('sombrero init ' + testDirname + ' -n', {
-      cwd: testDirectory,
-      stdio: 'inherit'
-    })
+    await run([cliPath, 'init', testDirname, '-n'], [], testDirectory)
 
     await run([cliPath, 'create', 'component'], [sceneNumber, ENTER, newComponentName, ENTER], testPath)
 
@@ -53,10 +50,7 @@ describe('Create', () => {
     let newSceneName = 'test-scene'
     let newComponentName = 'test-component'
 
-    execSync('sombrero init ' + testDirname + ' -n', {
-      cwd: testDirectory,
-      stdio: 'inherit'
-    })
+    await run([cliPath, 'init', testDirname, '-n'], [], testDirectory)
 
     await run([cliPath, 'create', 'scene'], [sceneNumber, ENTER, newSceneName, ENTER], testPath)
 
