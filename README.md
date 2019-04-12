@@ -2,7 +2,7 @@
 <img src="https://github.com/getapper/react-sombrero/blob/master/assets/img/sombrero.png" alt="logo" width="300" align="center"/>
 </p>
 
-# react-sombrero [![Build Status](https://travis-ci.org/getapper/react-sombrero.svg?branch=master)](https://travis-ci.org/getapper/react-sombrero)
+# react-sombrero [![Build Status](https://travis-ci.org/getapper/react-sombrero.svg?branch=master)](https://travis-ci.org/getapper/react-sombrero) [![npm version](https://badge.fury.io/js/react-sombrero.svg)](https://badge.fury.io/js/react-sombrero)
 A full web frontend framework based on react, redux-immutable, redux-saga and webpack
 
 ## Why
@@ -12,7 +12,26 @@ A full web frontend framework based on react, redux-immutable, redux-saga and we
 
 With this framework, we put every best practices we learnt in the last few years to create a full CLI based program that helps you init a project without worrying about webpack dev or production config, folders scenes and components structure, routing, etc. Just as Angular does.
 
-We know that every project has their own requirements, so this tool can be an overkill for small projects, or too much restrictive for big ones, but it can be really useful for demos or MVPs.    
+We know that every project has their own requirements, so this tool can be an overkill for small projects, or too much restrictive for big ones, but it can be really useful for demos or MVPs.
+
+## Quick install
+
+```
+npm i react-sombrero -g
+```    
+
+### Commands
+
+#### init
+```
+sombrero init projectName
+```
+Create project folder with all dependencies 
+
+#### create
+```
+sombrero create [scene|component]
+```
 
 ## TODOs
 
@@ -23,4 +42,4 @@ We know that every project has their own requirements, so this tool can be an ov
     - ~~help~~
 - Routing system
 - Forms management
-- Tests 
+- ~~Tests~~ 
