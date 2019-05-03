@@ -29,7 +29,7 @@ describe('Create', () => {
 
     await run([cliPath, 'init', testDirname, '-n'], [], testDirectory)
 
-    await run([cliPath, 'create', 'scene'], [sceneNumber, ENTER, newSceneName, ENTER], testPath)
+    await run([cliPath, 'create', 'scene'], [sceneNumber, ENTER, newSceneName, ENTER, 'n', ENTER, 'n', ENTER], testPath)
 
     expect(path.join(testPath, `scenes/${newSceneName}`)).to.be.a.directory()
   })
@@ -52,7 +52,7 @@ describe('Create', () => {
 
     await run([cliPath, 'init', testDirname, '-n'], [], testDirectory)
 
-    await run([cliPath, 'create', 'scene'], [sceneNumber, ENTER, newSceneName, ENTER], testPath)
+    await run([cliPath, 'create', 'scene'], [sceneNumber, ENTER, newSceneName, ENTER, 'n', ENTER, 'n', ENTER], testPath)
 
     expect(path.join(testPath, `scenes/${newSceneName}`)).to.be.a.directory()
 
