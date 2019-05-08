@@ -40,6 +40,6 @@ sombrero create [scene|component]
     - ~~init~~
     - ~~create~~
     - ~~help~~
-- Routing system
-- Forms management
+- ~~Routing system~~
+- ~~Forms management~~
 - ~~Tests~~ 
