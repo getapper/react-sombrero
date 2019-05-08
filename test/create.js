@@ -31,7 +31,7 @@ describe('Create', () => {
 
     await run([cliPath, 'create', 'scene'], [sceneNumber, ENTER, newSceneName, ENTER, 'n', ENTER, 'n', ENTER], testPath)
 
-    expect(path.join(testPath, `scenes/${newSceneName}`)).to.be.a.directory()
+    expect(path.join(testPath, `src/scenes/${newSceneName}`)).to.be.a.directory()
   })
 
   it('should not create a new component named test-component in root scenes directory', async () => {
@@ -42,7 +42,7 @@ describe('Create', () => {
 
     await run([cliPath, 'create', 'component'], [sceneNumber, ENTER, newComponentName, ENTER], testPath)
 
-    expect(path.join(testPath, `scenes/${newComponentName}`)).to.not.be.a.path()
+    expect(path.join(testPath, `src/scenes/${newComponentName}`)).to.not.be.a.path()
   })
 
   it('should create a new scene named test-scene and a new component children of test-scene', async () => {
@@ -54,10 +54,10 @@ describe('Create', () => {
 
     await run([cliPath, 'create', 'scene'], [sceneNumber, ENTER, newSceneName, ENTER, 'n', ENTER, 'n', ENTER], testPath)
 
-    expect(path.join(testPath, `scenes/${newSceneName}`)).to.be.a.directory()
+    expect(path.join(testPath, `src/scenes/${newSceneName}`)).to.be.a.directory()
 
     await run([cliPath, 'create', 'component'], [sceneNumber, ENTER, newComponentName, ENTER], testPath)
 
-    expect(path.join(testPath, `scenes/${newSceneName}/components/${newComponentName}`)).to.be.a.directory()
+    expect(path.join(testPath, `src/scenes/${newSceneName}/components/${newComponentName}`)).to.be.a.directory()
   })
 })
