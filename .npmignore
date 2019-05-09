@@ -4,5 +4,5 @@ package-lock.json
 test
 .travis.yml
 .gitignore
-assets
+assets/img/sombrero.png
 .DS_Store
