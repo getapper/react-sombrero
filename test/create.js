@@ -29,7 +29,7 @@ describe('Create', () => {
 
     await run([cliPath, 'init', testDirname, '-n'], [], testDirectory)
 
-    await run([cliPath, 'create', 'scene'], [sceneNumber, ENTER, newSceneName, ENTER, 'n', ENTER, 'n', ENTER], testPath)
+    await run([cliPath, 'create', 'scene'], [sceneNumber, ENTER, newSceneName, ENTER, 'y', ENTER, 'n', ENTER, 'n', ENTER], testPath)
 
     expect(path.join(testPath, `src/scenes/${newSceneName}`)).to.be.a.directory()
   })
@@ -40,7 +40,7 @@ describe('Create', () => {
 
     await run([cliPath, 'init', testDirname, '-n'], [], testDirectory)
 
-    await run([cliPath, 'create', 'component'], [sceneNumber, ENTER, newComponentName, ENTER], testPath)
+    await run([cliPath, 'create', 'component'], [sceneNumber, ENTER, newComponentName, ENTER, 'y', ENTER], testPath)
 
     expect(path.join(testPath, `src/scenes/${newComponentName}`)).to.not.be.a.path()
   })
@@ -52,11 +52,11 @@ describe('Create', () => {
 
     await run([cliPath, 'init', testDirname, '-n'], [], testDirectory)
 
-    await run([cliPath, 'create', 'scene'], [sceneNumber, ENTER, newSceneName, ENTER, 'n', ENTER, 'n', ENTER], testPath)
+    await run([cliPath, 'create', 'scene'], [sceneNumber, ENTER, newSceneName, ENTER, 'y', ENTER, 'n', ENTER, 'n', ENTER], testPath)
 
     expect(path.join(testPath, `src/scenes/${newSceneName}`)).to.be.a.directory()
 
-    await run([cliPath, 'create', 'component'], [sceneNumber, ENTER, newComponentName, ENTER], testPath)
+    await run([cliPath, 'create', 'component'], ['1', ENTER, newComponentName, ENTER, 'y', ENTER], testPath)
 
     expect(path.join(testPath, `src/scenes/${newSceneName}/components/${newComponentName}`)).to.be.a.directory()
   })
