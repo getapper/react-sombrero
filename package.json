@@ -1,6 +1,6 @@
 {
   "name": "react-sombrero",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "A full web frontend framework based on react, redux-immutable, redux-saga and webpack",
   "main": "index.js",
   "scripts": {
